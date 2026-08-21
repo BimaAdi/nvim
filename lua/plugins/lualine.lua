@@ -3,6 +3,6 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('lualine').setup()
-      vim.opt.showmode = false
+      vim.opt.showmode = false -- to disable default showmode (normal/insert/visual)
     end
 }
