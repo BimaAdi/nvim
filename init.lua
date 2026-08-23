@@ -10,7 +10,7 @@ vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.clipboard = "unnamedplus" -- to copy paste outside of neovim. make sure xclip installed `sudo apt install x-clip`
 
 -- buffer
-vim.keymap.set('n', '<C-s>', ':bd<cr>', { desc = 'close current buffer' })
+vim.keymap.set('n', '<C-q>', ':bd<cr>', { desc = 'close current buffer' })
 vim.keymap.set('n', '<C-d>', ':bn<cr>', { desc = 'go to next buffer' })
 vim.keymap.set('n', '<C-a>', ':bp<cr>', { desc = 'go to prev buffer' })
 
