@@ -1,3 +1,10 @@
+--[[
+NVIM v0.12.4
+Build type: Release
+LuaJIT 2.1.1774638290
+Run "nvim -V1 -v" for more info
+]]--
+
 -- Init Lazy Package manager
 require("config.lazy")
 
@@ -22,6 +29,12 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 vim.keymap.set('n', '<C-q>', ':bd<cr>', { desc = 'close current buffer' })
 vim.keymap.set('n', '<C-d>', ':bn<cr>', { desc = 'go to next buffer' })
 vim.keymap.set('n', '<C-a>', ':bp<cr>', { desc = 'go to prev buffer' })
+
+-- Normal mode: Comment/Uncomment current line
+vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
+
+-- Visual mode: Comment/Uncomment selection
+vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
 
 -- .tmux.conf
 -- to make sure color scheme still work on tmux

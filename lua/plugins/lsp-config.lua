@@ -15,20 +15,14 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "pyright"}
+        ensure_installed = {"lua_ls", "pyright","gopls", "tsc"}
       })
     end
   },
   {
     "neovim/nvim-lspconfig",
     dependencies = { 'saghen/blink.cmp' },
-    opts = {
-        servers = {
-          lua_ls = {},
-          pyright = {},
-        }
-    },
-    config = function(_, opts)
+    config = function()
        vim.lsp.config('lua_ls', {
          on_init = function(client)
            if client.workspace_folders then
@@ -73,15 +67,19 @@ return {
            Lua = {},
          },
       })
-            -- integrate with blink
+      -- integrate with blink
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       vim.lsp.config('lua_ls', { capabilities = capabilities })
       vim.lsp.config('pyright', { capabilities = capabilities })
+      vim.lsp.config('gopls', { capabilities = capabilities })
+      vim.lsp.config('tsc', { capabilities = capabilities })
+      -- enable LSP
       vim.lsp.enable("lua_ls")
       -- for pyright if you want to use virtual environtment
       -- make sure to `source .venv/bin/activate first berfore open neovim`
       vim.lsp.enable("pyright")
-
+      vim.lsp.enable("gopls")
+      vim.lsp.enable("tsc")
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
@@ -89,8 +87,7 @@ return {
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-
-
+      vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { noremap = true, silent = true })
     end
   },
   {
