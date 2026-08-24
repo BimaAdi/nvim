@@ -26,9 +26,9 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 })
 
 -- buffer
-vim.keymap.set('n', '<C-q>', ':bd<cr>', { desc = 'close current buffer' })
-vim.keymap.set('n', '<C-d>', ':bn<cr>', { desc = 'go to next buffer' })
-vim.keymap.set('n', '<C-a>', ':bp<cr>', { desc = 'go to prev buffer' })
+vim.keymap.set("n", "<C-q>", ":bd<cr>", { desc = "close current buffer" })
+vim.keymap.set("n", "<C-d>", ":bn<cr>", { desc = "go to next buffer" })
+vim.keymap.set("n", "<C-a>", ":bp<cr>", { desc = "go to prev buffer" })
 
 -- Normal mode: Comment/Uncomment current line
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
@@ -44,4 +44,7 @@ set -g default-terminal "screen-256color"
 set -as terminal-features ",xterm-256color:RGB"
 set -g focus-events on
 ]]--
+
+-- format code using .editorconfig
+-- open file on normal mode type :retab then type gg=G
 

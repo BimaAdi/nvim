@@ -10,9 +10,9 @@ return {
     lazy = false, -- neo-tree will lazily load itself
     config = function()
       -- Toggle Neo-tree filesystem view
-      vim.keymap.set('n', '<C-e>', '<cmd>Neotree toggle filesystem left<cr>', { desc = 'Toggle Neo-tree' })
+      vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle filesystem left<cr>", { desc = "Toggle Neo-tree" })
       -- if config is define the opts will be ignored
-      -- so I add this require so it doesn't get ignored
+      -- so I add this require so it doesn"t get ignored
       require("neo-tree").setup({
         window = {
           position = "left",
