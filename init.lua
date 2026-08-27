@@ -40,9 +40,19 @@ vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment select
 -- to make sure color scheme still work on tmux
 -- and autoread working on while open using tmux
 --[[
+# Set the correct terminal color
 set -g default-terminal "screen-256color"
 set -as terminal-features ",xterm-256color:RGB"
+
+# detect file changed (for neovim)
 set -g focus-events on
+
+# Start window and pane numbering at 1
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Automatically renumber windows when one is closed
+set -g renumber-windows on
 ]]--
 
 -- format code using .editorconfig
