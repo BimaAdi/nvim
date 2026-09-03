@@ -155,5 +155,16 @@ return {
         fuzzy = { implementation = "prefer_rust_with_warning" }
       },
       opts_extend = { "sources.default" }
-    }
+    },
+    {
+      "antosha417/nvim-lsp-file-operations",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neo-tree/neo-tree.nvim", -- Optional: If you use Neo-tree
+      },
+      config = function()
+        -- add ability when rename file also change the import on other file
+        require("lsp-file-operations").setup()
+      end,
+    },
   }
