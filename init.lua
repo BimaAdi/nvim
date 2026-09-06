@@ -36,6 +36,10 @@ vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line"
 -- Visual mode: Comment/Uncomment selection
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
 
+-- Press Escape to exit Terminal Mode
+-- to open terminal :terminal
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+
 -- .tmux.conf
 -- to make sure color scheme still work on tmux
 -- and autoread working on while open using tmux
@@ -53,9 +57,6 @@ setw -g pane-base-index 1
 
 # Automatically renumber windows when one is closed
 set -g renumber-windows on
-
-# Set tmux bar color
-set -g window-status-current-style bg='#1e3a8a',fg='#ffffff',bold
 ]]--
 
 -- format code using .editorconfig
