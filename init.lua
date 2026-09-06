@@ -53,6 +53,9 @@ setw -g pane-base-index 1
 
 # Automatically renumber windows when one is closed
 set -g renumber-windows on
+
+# Set tmux bar color
+set -g window-status-current-style bg='#1e3a8a',fg='#ffffff',bold
 ]]--
 
 -- format code using .editorconfig
