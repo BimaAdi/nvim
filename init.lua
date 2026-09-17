@@ -27,8 +27,8 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 
 -- buffer
 vim.keymap.set("n", "<C-q>", ":bd<cr>", { desc = "close current buffer" })
-vim.keymap.set("n", "<C-d>", ":bn<cr>", { desc = "go to next buffer" })
-vim.keymap.set("n", "<C-a>", ":bp<cr>", { desc = "go to prev buffer" })
+vim.keymap.set("n", "<C-l>", ":bn<cr>", { desc = "go to next buffer" })
+vim.keymap.set("n", "<C-h>", ":bp<cr>", { desc = "go to prev buffer" })
 
 -- Normal mode: Comment/Uncomment current line
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
@@ -37,7 +37,7 @@ vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line"
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
 
 -- Press Escape to exit Terminal Mode
--- to open terminal :terminal
+-- to open terminal :terminal or :term
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 
 -- .tmux.conf
