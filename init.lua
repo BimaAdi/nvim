@@ -27,8 +27,9 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 
 -- buffer
 vim.keymap.set("n", "<C-q>", ":bd<cr>", { desc = "close current buffer" })
-vim.keymap.set("n", "<C-l>", ":bn<cr>", { desc = "go to next buffer" })
-vim.keymap.set("n", "<C-h>", ":bp<cr>", { desc = "go to prev buffer" })
+-- switch to using bufferline cycle so it can be modified
+-- vim.keymap.set("n", "<C-l>", ":bn<cr>", { desc = "go to next buffer" })
+-- vim.keymap.set("n", "<C-h>", ":bp<cr>", { desc = "go to prev buffer" })
 
 -- Normal mode: Comment/Uncomment current line
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
