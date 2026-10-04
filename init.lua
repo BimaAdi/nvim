@@ -24,6 +24,8 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
     end
   end,
 })
+-- allow neovim to read .nvim.lua for custom configuration in specific project
+vim.o.exrc = true
 
 -- buffer
 vim.keymap.set("n", "<C-q>", ":bd<cr>", { desc = "close current buffer" })
