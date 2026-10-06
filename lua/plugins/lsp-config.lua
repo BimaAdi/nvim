@@ -15,7 +15,7 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "basedpyright","gopls", "tsc", "rust_analyzer"}
+        ensure_installed = {"lua_ls","gopls", "tsc", "rust_analyzer", "zuban"}
       })
     end
   },
@@ -79,7 +79,8 @@ return {
         -- integrate with blink
         local capabilities = require("blink.cmp").get_lsp_capabilities()
         vim.lsp.config("lua_ls", { capabilities = capabilities })
-        vim.lsp.config("basedpyright", { capabilities = capabilities })
+        -- vim.lsp.config("basedpyright", { capabilities = capabilities })
+        vim.lsp.config("zuban", { capabilities =capabilities })
         vim.lsp.config("gopls", { capabilities = capabilities })
         vim.lsp.config("tsc", { capabilities = capabilities })
         vim.lsp.config("rust_analyzer", { capabilities = capabilities })
@@ -88,7 +89,8 @@ return {
         -- if error when installed basedpyright `sudo apt install python3-venv`
         -- for basedpyright if you want to use virtual environtment
         -- make sure to `source .venv/bin/activate first berfore open neovim`
-        vim.lsp.enable("basedpyright")
+        -- vim.lsp.enable("basedpyright")
+        vim.lsp.enable("zuban")
         vim.lsp.enable("gopls")
         vim.lsp.enable("tsc")
         vim.lsp.enable("rust_analyzer")
