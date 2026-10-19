@@ -4,6 +4,14 @@ return {
     require("bufferline").setup({})
     vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
     vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
+        vim.keymap.set("n", "<leader>bt", function()
+      -- Check the current state using vim.opt
+      if vim.opt.showtabline:get() > 0 then
+        vim.opt.showtabline = 0 -- Hide bufferline
+      else
+        vim.opt.showtabline = 2 -- Show bufferline
+      end
+    end, { desc = "Toggle bufferline" })
     vim.keymap.set("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer (visual order)" })
     vim.keymap.set("n", "<C-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer (visual order)" })
     vim.keymap.set("n", "<leader>n1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "go to buffer 1" })
