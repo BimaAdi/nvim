@@ -3,7 +3,16 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("lualine").setup({
-      options = { "filename", path = 1 }
+      sections = {
+        lualine_a = {"mode"},
+        lualine_b = {"branch", "diff", "diagnostics"},
+        lualine_c = {
+          {"filename", path = 1}
+        },
+        lualine_x = {"filetype"},
+        lualine_y = {"progress"},
+        lualine_z = {"location"}
+      },
     })
     vim.opt.showmode = false -- to disable default showmode (normal/insert/visual)
   end
