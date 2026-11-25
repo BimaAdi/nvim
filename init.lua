@@ -60,6 +60,9 @@ setw -g pane-base-index 1
 
 # Automatically renumber windows when one is closed
 set -g renumber-windows on
+
+# Change bar color
+set -g status-style bg=#46B6F7,fg=black
 ]]--
 
 -- format code using .editorconfig
